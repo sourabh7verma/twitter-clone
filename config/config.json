@@ -1,0 +1,24 @@
+{ 
+    "development":{
+        "PORT":9080,
+        "Server_URL":"http://localhost:9080",
+        "ForgotPasswordLink":"",
+        "Server_IP":"192.168.107.86",
+        "Web_Link":"",
+        "MONGODB_URI":"mongodb://127.0.0.1:27017/twitter_clone_sv",
+        "JWT_SECRET":"SECRET#123",
+        "JWT_EXP":"1y",
+        "CHECK_JWT_EXP":"true"
+    },
+    "production":{
+        "PORT":9080,
+        "Server_URL":"http://localhost:9080",
+        "ForgotPasswordLink":"",
+        "Server_IP":"192.168.107.86",
+        "Web_Link":"",
+        "MONGODB_URI":"mongodb://127.0.0.1:27017/twitter_clone_sv",
+        "JWT_SECRET":"SECRET#123",
+        "JWT_EXP":"1y",
+        "CHECK_JWT_EXP":"true"
+    }
+}

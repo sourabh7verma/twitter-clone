@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "270cd49c-00a0-4a43-a67d-a85685c3e6c6",
+		"name": "Twitter Clone API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29139442"
+	},
+	"item": [
+		{
+			"name": "Login User",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"martin.samuels@test.com\",\"password\":\"123456\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9080/api/authenticate"
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"first_name\":\"Martin\",\"last_name\":\"Samuels\",\"email\":\"martin.samuels@test.com\",\"password\":\"123456\",\"confirm_password\":123456}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9080/api/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Tweet",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGRiMzhkMThkMzk5Yzk2ZmY4ODAwM2UiLCJ1c2VyX3R5cGUiOjAsImlhdCI6MTY5MjA4ODUyOSwiZXhwIjoxNzIzNjQ2MTI5fQ.y1_FVrNqOQ-vNq0PTaRU61hZlegmDhFxgQtUjcDDS5g",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"Test Tweet\",\"description\":\"This is test tweet, Please ignore.\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9080/api/create_tweet"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout User",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGRiM2M2ZGY3NTllNmY5OGUwN2E0YjciLCJ1c2VyX3R5cGUiOjAsImlhdCI6MTY5MjA4OTQ1MywiZXhwIjoxNzIzNjQ3MDUzfQ.keQ6uCw5NgVNlN6g_0zN6wIBlOD1jUPuhDyNJjYEsMs",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"jwt_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGRiM2M2ZGY3NTllNmY5OGUwN2E0YjciLCJ1c2VyX3R5cGUiOjAsImlhdCI6MTY5MjA4OTQ1MywiZXhwIjoxNzIzNjQ3MDUzfQ.keQ6uCw5NgVNlN6g_0zN6wIBlOD1jUPuhDyNJjYEsMs\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9080/api/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tweets",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {},
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGRiMzhkMThkMzk5Yzk2ZmY4ODAwM2UiLCJ1c2VyX3R5cGUiOjAsImlhdCI6MTY5MjA4ODUyOSwiZXhwIjoxNzIzNjQ2MTI5fQ.y1_FVrNqOQ-vNq0PTaRU61hZlegmDhFxgQtUjcDDS5g",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9080/api/get_tweet"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Tweet",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGRiMzhkMThkMzk5Yzk2ZmY4ODAwM2UiLCJ1c2VyX3R5cGUiOjAsImlhdCI6MTY5MjA4ODUyOSwiZXhwIjoxNzIzNjQ2MTI5fQ.y1_FVrNqOQ-vNq0PTaRU61hZlegmDhFxgQtUjcDDS5g",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9080/api/delete_tweet/64db5a67834fcb42d9cb9739"
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Tweets and Friends Tweets",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {},
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGRiMzhkMThkMzk5Yzk2ZmY4ODAwM2UiLCJ1c2VyX3R5cGUiOjAsImlhdCI6MTY5MjA4ODUyOSwiZXhwIjoxNzIzNjQ2MTI5fQ.y1_FVrNqOQ-vNq0PTaRU61hZlegmDhFxgQtUjcDDS5g",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9080/api/getTweets"
+			},
+			"response": []
+		},
+		{
+			"name": "Follow User",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGRiMzhkMThkMzk5Yzk2ZmY4ODAwM2UiLCJ1c2VyX3R5cGUiOjAsImlhdCI6MTY5MjA4ODUyOSwiZXhwIjoxNzIzNjQ2MTI5fQ.y1_FVrNqOQ-vNq0PTaRU61hZlegmDhFxgQtUjcDDS5g",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"follow_userid\":\"64db3c6df759e6f98e07a4b7\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9080/api/follow_user"
+			},
+			"response": []
+		},
+		{
+			"name": "Unfollow User",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGRiMzhkMThkMzk5Yzk2ZmY4ODAwM2UiLCJ1c2VyX3R5cGUiOjAsImlhdCI6MTY5MjA4ODUyOSwiZXhwIjoxNzIzNjQ2MTI5fQ.y1_FVrNqOQ-vNq0PTaRU61hZlegmDhFxgQtUjcDDS5g",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"follow_userid\":\"64db3c6df759e6f98e07a4b7\",\"type\":\"unfollow\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9080/api/follow_user"
+			},
+			"response": []
+		}
+	]
+}
